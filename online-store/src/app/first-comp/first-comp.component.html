@@ -1,0 +1,21 @@
+<div>
+  <form (ngSubmit)="submitForm()">
+    <input type="text" id="name" name="name" placeholder="Enter your name" [(ngModel)]="name" />
+    <input type="text" id="email" name="email" placeholder="Enter your email" [(ngModel)]="email"/>
+    <input type="text" id="message" name="message" placeholder="Enter your message" [(ngModel)]="message" />
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="info" *ngIf="isSubmitted; else noInfo">
+    <div *ngFor="let data of allData">
+       <p>Name: {{data.name}} </p>
+       <p>Email: {{data.email}} </p>
+       <p>Message: {{data.message}} </p>
+    </div>
+  </div>
+
+  <ng-template #noInfo>
+   <p>Hey. Kindly fill the form :)</p>
+  </ng-template>
+</div>

@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MessageDisplayComponent } from '../message-display/message-display.component';
+import { MessageHandlingService } from '../message-handling.service';
 
 @Component({
   selector: 'app-first-comp',
@@ -9,6 +10,7 @@ import { MessageDisplayComponent } from '../message-display/message-display.comp
   imports: [FormsModule, CommonModule, MessageDisplayComponent],
   templateUrl: './first-comp.component.html',
   styleUrl: './first-comp.component.css',
+  providers: [MessageHandlingService]
 })
 export class FirstCompComponent {
   name: string = '';
@@ -18,6 +20,11 @@ export class FirstCompComponent {
 
   isSubmitted = false;
 
+  constructor(private service: MessageHandlingService){
+    this.allData = service.getAllMessages();
+    this.isSubmitted = this.allData.length > 0;
+  }
+
   submitForm(): void {
     this.isSubmitted = true;
     const newData = {
@@ -25,12 +32,12 @@ export class FirstCompComponent {
       email: this.email,
       message: this.message,
     };
-    this.allData.push(newData);
+    this.service.addMessage(newData);
     this.name = this.email = this.message = ''
   }
 
   deleteMessage(index: number): void{
-    this.allData.splice(index, 1);
+    this.service.deleteMessage(index);
     if(this.allData.length === 0){
       this.isSubmitted = false;
     }

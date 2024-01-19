@@ -30,6 +30,7 @@
       *ngFor="let data of allData; let i = index"
       [data]="data"
       [i]="i"
+      (delete)="deleteMessage($event)"
     ></app-message-display>
     
   </div>

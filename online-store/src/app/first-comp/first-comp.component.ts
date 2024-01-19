@@ -28,4 +28,11 @@ export class FirstCompComponent {
     this.allData.push(newData);
     this.name = this.email = this.message = ''
   }
+
+  deleteMessage(index: number): void{
+    this.allData.splice(index, 1);
+    if(this.allData.length === 0){
+      this.isSubmitted = false;
+    }
+  }
 }

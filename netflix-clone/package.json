@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce",
+  "name": "netflix-clone",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,17 +7,15 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:ecommerce": "node dist/ecommerce/server/server.mjs"
+    "serve:ssr:netflix-clone": "node dist/netflix-clone/server/server.mjs"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.0",
-    "@angular/cdk": "^17.1.1",
     "@angular/common": "^17.0.0",
     "@angular/compiler": "^17.0.0",
     "@angular/core": "^17.0.0",
     "@angular/forms": "^17.0.0",
-    "@angular/material": "^17.1.1",
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/platform-server": "^17.0.0",

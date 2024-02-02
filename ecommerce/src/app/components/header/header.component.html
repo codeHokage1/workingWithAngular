@@ -19,12 +19,16 @@
 
   <ul class="nav">
     <li class="nav-item">
-      <a href="#" class="nav-link"
-        ><img
+      <a href="#" class="nav-link">
+        <img
           src="https://img.icons8.com/dotty/80/shopping-cart.png"
           alt="shopping-cart"
           width="40px"
-      /></a>
+        />
+        <span class="badge text-bg-primary">{{ getCartItemNum() }}</span>
+      </a>
     </li>
   </ul>
 </header>
+
+<router-outlet></router-outlet>

@@ -12,9 +12,9 @@ import { Router } from '@angular/router';
 export class BrowseComponent {
   constructor(private loginservice: LoginService, private router: Router){}
 
-  ngOnInit(): void {
-    if(!this.loginservice.isLoggedIn()) {
-      this.router.navigateByUrl('/login');
-    }
-  }
+  // ngOnInit(): void {
+  //   if(!this.loginservice.isLoggedIn()) {
+  //     this.router.navigateByUrl('/login');
+  //   }
+  // }
 }

@@ -13,6 +13,6 @@ export class MovieCardComponent {
   @Input() imageBaseUrl: string = '';
 
   ngOnInit(): void {
-    console.log('movie', this.movie)
+    // console.log('movie', this.movie)
   }
 }

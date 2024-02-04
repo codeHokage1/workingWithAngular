@@ -1,8 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'ngx-toastr/toastr';
+@font-face {
+   font-family: 'Netflix Sans';
+   src: url(./assets/netflix-sans-font/NetflixSans-Light.otf);
+}
 
 *{
    margin: 0;
    padding: 0;
+}
+body{
+   background-color: black;
+   font-family: 'Netflix Sans', Arial, Helvetica, sans-serif;
 }

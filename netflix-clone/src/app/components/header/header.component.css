@@ -1,9 +1,11 @@
-
-.header{
-   background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.02));
-   position: fixed;
-   width: 100%;
-   border: 1px solid black;
+.header {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  );
+  position: fixed;
+  width: 100%;
 }
 .header img {
   width: 12em;

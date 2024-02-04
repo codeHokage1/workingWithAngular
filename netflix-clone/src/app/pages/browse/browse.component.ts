@@ -7,6 +7,7 @@ import { CartApiService } from '../../services/cart-api.service';
 import { HeaderComponent } from '../../components/header/header.component';
 import { MoviesCategoryComponent } from '../../components/movies-category/movies-category.component';
 import { Movie } from '../../entities/movie.entity';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-browse',
@@ -22,12 +23,13 @@ import { Movie } from '../../entities/movie.entity';
   styleUrl: './browse.component.css',
 })
 export class BrowseComponent {
-  constructor(private movieApi: MovieApiService) {}
+  constructor(private movieApi: MovieApiService, public domSanitize: DomSanitizer) {}
 
   nowPlayingMovies: Movie[] = [];
   upcomingMovies: Movie[] = [];
   topRatedMovies: Movie[] = [];
   bannerMovie!: Movie;
+  bannerMovieVideos: any[] = [];
 
   ngOnInit(): void {
     this.movieApi.getNowPlayingMovies().subscribe((movies) => {
@@ -37,10 +39,16 @@ export class BrowseComponent {
     this.movieApi.getUpcomingMovies().subscribe((movies) => {
       this.upcomingMovies = movies.results;
       this.bannerMovie = this.upcomingMovies[0];
+    console.log("Banner movie", this.bannerMovie);
+
     });
 
     this.movieApi.getTopratedMovies().subscribe((movies) => {
       this.topRatedMovies = movies.results;
     });
+
+    this.movieApi.getBannerVideo(this.bannerMovie.id).subscribe((movies) => {
+      console.log('banner movie videos', movies);
+    })
   }
 }

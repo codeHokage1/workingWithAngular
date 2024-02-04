@@ -1,4 +1,16 @@
-.movies{
-   display: flex;
-   gap: 3em;
+.movies {
+  display: flex;
+  gap: 2em;
+  overflow-x: scroll;
+  padding: 0 0 0 2em;
+  margin-bottom: 2em;
+}
+.movies::-webkit-scrollbar {
+  display: none;
+}
+
+h3 {
+  font-size: 1.2rem;
+  /* font-weight: 800; */
+  margin: 0 0 0.5em 2em;
 }

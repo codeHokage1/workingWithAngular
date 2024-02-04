@@ -9,8 +9,13 @@
       class="banner-image"
     />
     <div class="banner-info">
-      <h3>{{bannerMovie.title}}</h3>
-      <p>{{bannerMovie.overview}}</p>
+      <h3>{{ bannerMovie.title }}</h3>
+      <p>{{ bannerMovie.overview }}</p>
+
+      <div class="banner-action">
+        <button type="button" class="play-btn"><img src="https://img.icons8.com/ios-glyphs/30/play--v1.png" alt="play--v1"/> Play</button>
+        <button type="button" class="info-btn"><img  src="../../../assets/info.png" alt="info--v1"/> More Info</button>
+      </div>
     </div>
   </div>
 
@@ -20,8 +25,8 @@
       [movies]="nowPlayingMovies"
     ></app-movies-category>
     <app-movies-category
-    [categoryTitle]="'Top Rated'"
-    [movies]="topRatedMovies"
+      [categoryTitle]="'Top Rated'"
+      [movies]="topRatedMovies"
     ></app-movies-category>
     <app-movies-category
       [categoryTitle]="'Upcoming'"

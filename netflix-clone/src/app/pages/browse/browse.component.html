@@ -1,1 +1,31 @@
-<p>browse works!</p>
+<!-- <p *ngFor="let movie of allMovies">{{movie.backdrop_path}}</p> -->
+<div class="browse-page">
+  <app-header></app-header>
+
+  <div class="banner">
+    <img
+      [src]="'https://image.tmdb.org/t/p/original' + bannerMovie.poster_path"
+      alt="banner image"
+      class="banner-image"
+    />
+    <div class="banner-info">
+      <h3>{{bannerMovie.title}}</h3>
+      <p>{{bannerMovie.overview}}</p>
+    </div>
+  </div>
+
+  <div class="movies-categories">
+    <app-movies-category
+      [categoryTitle]="'Now Playing'"
+      [movies]="nowPlayingMovies"
+    ></app-movies-category>
+    <app-movies-category
+    [categoryTitle]="'Top Rated'"
+    [movies]="topRatedMovies"
+    ></app-movies-category>
+    <app-movies-category
+      [categoryTitle]="'Upcoming'"
+      [movies]="upcomingMovies"
+    ></app-movies-category>
+  </div>
+</div>

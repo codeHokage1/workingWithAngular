@@ -15,10 +15,6 @@
   display: flex;
   flex-direction: column;
 }
-.header img {
-  width: 12em;
-  margin: 10px 150px 0;
-}
 
 .form {
   background-color: rgba(0, 0, 0, 0.65);
@@ -26,7 +22,7 @@
   align-self: center;
   color: white;
   padding: 2em 4em;
-  /* width: 20%; */
+  margin: 10em auto;
 }
 .form h1 {
   font-size: 2em;

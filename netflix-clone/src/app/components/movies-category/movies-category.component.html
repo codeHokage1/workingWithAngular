@@ -1,0 +1,10 @@
+<div class="category-container">
+  <h3>{{ categoryTitle }}</h3>
+  <div class="movies">
+    @for (movie of movies; track movie) {
+    <app-movie-card [movie]="movie"></app-movie-card>
+    } @empty {
+    <p>Loading Movies...</p>
+    }
+  </div>
+</div>

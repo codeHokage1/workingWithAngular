@@ -15,6 +15,6 @@ export class MoviesCategoryComponent {
   @Input() movies: Movie[] = [];
 
   ngOnInit(): void {
-    // console.log('movies', this.movies)
+    console.log(`Movies in ${this.categoryTitle}`, this.movies)
   }
 }

@@ -23,7 +23,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrl: './browse.component.css',
 })
 export class BrowseComponent {
-  constructor(private movieApi: MovieApiService, public domSanitize: DomSanitizer) {}
+  constructor(
+    private movieApi: MovieApiService,
+    public domSanitise: DomSanitizer
+  ) {}
 
   nowPlayingMovies: Movie[] = [];
   upcomingMovies: Movie[] = [];
@@ -39,16 +42,35 @@ export class BrowseComponent {
     this.movieApi.getUpcomingMovies().subscribe((movies) => {
       this.upcomingMovies = movies.results;
       this.bannerMovie = this.upcomingMovies[0];
-    console.log("Banner movie", this.bannerMovie);
-
+      // console.log('Banner movie', this.bannerMovie);
     });
 
     this.movieApi.getTopratedMovies().subscribe((movies) => {
       this.topRatedMovies = movies.results;
     });
 
+    // this.nowPlayingMovies.map(movie => {
+    //   this.movieApi.getBannerVideo(movie.id).subscribe(mov => {
+    //     movie = mov.results;
+    //   }) 
+    // })
+
+    // this.upcomingMovies.map(movie => {
+    //   this.movieApi.getBannerVideo(movie.id).subscribe(mov => {
+    //     movie = mov.results;
+    //   }) 
+    // })
+
+    // this.topRatedMovies.map(movie => {
+    //   this.movieApi.getBannerVideo(movie.id).subscribe(mov => {
+    //     movie = mov.results;
+    //   }) 
+    // })
+
+
+
     this.movieApi.getBannerVideo(this.bannerMovie.id).subscribe((movies) => {
-      console.log('banner movie videos', movies);
-    })
+      this.bannerMovieVideos = movies.results;
+    });
   }
 }

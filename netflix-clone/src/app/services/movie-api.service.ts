@@ -43,11 +43,11 @@ export class MovieApiService {
   }
 
   getBannerVideo(movieId: number): Observable<any> {
-    return this.http.get(`https://api.themoviedb.org/3/movie/${movieId}/videos`, {
+    return this.http.get(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, {
       headers: {
         Authorization: `Bearer ${this.apiToken}`,
-        accept: 'application/json',
-      },
+        accept: 'application/json'
+      }
     });
   }
 }

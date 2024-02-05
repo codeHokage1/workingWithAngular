@@ -7,5 +7,5 @@ export interface Movie {
    genre_ids: [];
    adult: boolean;
    videoKey?: string;
-   // slug: string;
+   videoUrls?: string[];
 }

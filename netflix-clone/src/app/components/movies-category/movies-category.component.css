@@ -1,8 +1,12 @@
 .movies {
   display: flex;
   gap: 2em;
-  overflow-x: scroll;
-  padding: 0 0 0 2em;
+  /* overflow-x: scroll;
+  overflow-y: hidden; */
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 0 2em;
   margin-bottom: 2em;
 }
 .movies::-webkit-scrollbar {
